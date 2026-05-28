@@ -537,13 +537,38 @@ td {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 1rem;
-  background:
-    radial-gradient(circle at 24% 22%, rgba(255, 255, 255, 0.9) 0 11%, transparent 12%),
-    linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 68%, black));
-  color: white;
-  box-shadow: 0 14px 32px color-mix(in srgb, var(--accent) 28%, transparent);
+  border: 1px solid var(--line);
+  background: white;
+  box-shadow: 0 14px 32px color-mix(in srgb, var(--accent) 18%, transparent);
   font-size: 0.82rem;
   font-weight: 900;
+}
+
+.language-icon img {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.language-icon.duo {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.1rem;
+  padding: 0.52rem;
+}
+
+.language-icon.duo img {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.language-fallback {
+  display: none;
+  color: var(--ink);
+}
+
+.language-icon:not(:has(img)) .language-fallback {
+  display: inline;
 }
 
 .language-card::before {

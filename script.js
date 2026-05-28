@@ -313,6 +313,7 @@ const languages = [
   {
     name: "Python",
     icon: "Py",
+    logo: "python/python-original.svg",
     note: "Beginner-friendly and useful in many paths.",
     accent: "#2e9d63",
     paths: ["Backend", "Machine Learning", "AI", "Data Science", "Automation", "Cybersecurity"]
@@ -320,6 +321,7 @@ const languages = [
   {
     name: "JavaScript",
     icon: "JS",
+    logo: "javascript/javascript-original.svg",
     note: "The main language of the web.",
     accent: "#f2c94c",
     paths: ["Frontend", "Backend", "Full Stack", "Mobile apps", "Browser games", "Desktop apps"]
@@ -327,6 +329,7 @@ const languages = [
   {
     name: "TypeScript",
     icon: "TS",
+    logo: "typescript/typescript-original.svg",
     note: "JavaScript with extra safety for bigger apps.",
     accent: "#3178c6",
     paths: ["Frontend", "Backend", "Full Stack", "Large web apps", "AI interfaces"]
@@ -334,6 +337,7 @@ const languages = [
   {
     name: "Java",
     icon: "Ja",
+    logo: "java/java-original.svg",
     note: "Common in Android and large company systems.",
     accent: "#d63384",
     paths: ["Android", "Backend", "Enterprise apps", "Banking systems", "Large systems"]
@@ -341,6 +345,7 @@ const languages = [
   {
     name: "Kotlin",
     icon: "Kt",
+    logo: "kotlin/kotlin-original.svg",
     note: "A modern favorite for Android apps.",
     accent: "#7f52ff",
     paths: ["Android", "Backend", "Mobile apps", "Cross-platform experiments"]
@@ -348,6 +353,7 @@ const languages = [
   {
     name: "Go",
     icon: "Go",
+    logo: "go/go-original-wordmark.svg",
     note: "Simple, fast, and loved for cloud tools.",
     accent: "#0071e3",
     paths: ["Backend", "Cloud", "DevOps tools", "Infrastructure", "APIs"]
@@ -355,6 +361,7 @@ const languages = [
   {
     name: "Swift",
     icon: "Sw",
+    logo: "swift/swift-original.svg",
     note: "The friendly route into Apple apps.",
     accent: "#ff8a00",
     paths: ["iOS", "iPadOS", "Apple Watch", "macOS apps"]
@@ -362,6 +369,7 @@ const languages = [
   {
     name: "C#",
     icon: "C#",
+    logo: "csharp/csharp-original.svg",
     note: "Great for Unity games and some backend work.",
     accent: "#7c3aed",
     paths: ["Game Dev", "Unity", "Backend", "Windows apps"]
@@ -369,6 +377,7 @@ const languages = [
   {
     name: "C/C++",
     icon: "C++",
+    logo: "cplusplus/cplusplus-original.svg",
     note: "Closer to hardware and performance.",
     accent: "#52525b",
     paths: ["Embedded", "Game engines", "Robotics", "Operating systems", "Performance apps"]
@@ -376,6 +385,7 @@ const languages = [
   {
     name: "SQL",
     icon: "SQL",
+    logo: "postgresql/postgresql-original.svg",
     note: "The language for asking databases questions.",
     accent: "#2563eb",
     paths: ["Backend", "Data Science", "Analytics", "Databases", "Business intelligence"]
@@ -383,6 +393,7 @@ const languages = [
   {
     name: "Rust",
     icon: "Rs",
+    logo: "rust/rust-original.svg",
     note: "Used when speed and safety both matter.",
     accent: "#b45309",
     paths: ["Blockchain", "Systems", "Backend", "Cloud tools", "Performance apps"]
@@ -390,6 +401,7 @@ const languages = [
   {
     name: "HTML/CSS",
     icon: "HC",
+    logo: ["html5/html5-original.svg", "css3/css3-original.svg"],
     note: "The starting point for beautiful web pages.",
     accent: "#e34f26",
     paths: ["Frontend", "UI implementation", "Landing pages", "Email templates", "Portfolio sites"]
@@ -397,6 +409,7 @@ const languages = [
   {
     name: "Dart",
     icon: "Dt",
+    logo: "dart/dart-original.svg",
     note: "Used with Flutter for smooth mobile apps.",
     accent: "#0175c2",
     paths: ["Android", "iOS", "Cross-platform apps", "Desktop apps"]
@@ -404,6 +417,7 @@ const languages = [
   {
     name: "Solidity",
     icon: "Sol",
+    logo: "solidity/solidity-original.svg",
     note: "Used for smart contracts in blockchain.",
     accent: "#111827",
     paths: ["Blockchain", "Smart contracts", "Crypto apps", "Web3 experiments"]
@@ -434,6 +448,22 @@ const domainVisuals = {
   "Technical Writing": { label: "Doc", accent: "#0d9488" },
   "Product Management": { label: "PM", accent: "#f43f5e" }
 };
+
+const deviconBase = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/";
+
+function renderLanguageLogo(language) {
+  const logos = Array.isArray(language.logo) ? language.logo : [language.logo];
+  const logoClass = logos.length > 1 ? " duo" : "";
+  const images = logos
+    .filter(Boolean)
+    .map((logo) => `<img src="${deviconBase}${logo}" alt="" loading="lazy" onerror="this.remove()">`)
+    .join("");
+
+  return `<span class="language-icon${logoClass}" aria-hidden="true">
+    ${images}
+    <span class="language-fallback">${language.icon}</span>
+  </span>`;
+}
 
 const domainButtons = document.querySelector("#domainButtons");
 const search = document.querySelector("#domainSearch");
@@ -496,7 +526,7 @@ function renderLanguages() {
   document.querySelector("#languageCards").innerHTML = languages
     .map((language) => `<article class="language-card" style="--accent: ${language.accent}">
       <div class="language-topline">
-        <span class="language-icon">${language.icon}</span>
+        ${renderLanguageLogo(language)}
         <p class="eyebrow">Language path</p>
       </div>
       <h3>${language.name}</h3>
