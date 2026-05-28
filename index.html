@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tech Domains Explorer</title>
+    <title>Tech Path Finder</title>
     <meta
       name="description"
       content="A beginner-friendly interactive guide to software engineering domains, languages, examples, and starter roadmaps."
@@ -12,9 +12,14 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Tech Domains Explorer home">
-        <span class="brand-mark">CS</span>
-        <span>Domain Explorer</span>
+      <a class="brand" href="#top" aria-label="Tech Path Finder home">
+        <span class="app-icon" aria-hidden="true">
+          <span>TP</span>
+        </span>
+        <span class="brand-text">
+          <strong>Tech Path Finder</strong>
+          <small>Beginner Domain Explorer</small>
+        </span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#explore">Explore</a>
@@ -88,7 +93,7 @@
 
           <article class="domain-detail reveal" aria-live="polite">
             <div class="domain-topline">
-              <span id="domainIcon" class="domain-icon" aria-hidden="true"></span>
+              <span id="domainIcon" class="domain-icon tech-icon" aria-hidden="true"></span>
               <div>
                 <p id="domainCategory" class="eyebrow"></p>
                 <h3 id="domainTitle"></h3>
@@ -205,6 +210,7 @@
 
     <footer class="footer">
       <p>Built for beginners. Explore lightly, build tiny things, and follow what feels interesting.</p>
+      <p class="watermark">Made by Aaditya Dike</p>
     </footer>
 
     <script src="script.js"></script>

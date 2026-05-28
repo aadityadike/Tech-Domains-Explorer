@@ -236,59 +236,204 @@ const domains = [
     build: "Test plans and automated checks",
     mainLanguage: "JavaScript or Python",
     appExamples: "Bank apps, ecommerce, ride apps"
+  },
+  {
+    title: "Database Engineering",
+    icon: "DB",
+    category: "Organizing app data",
+    what: "Database engineering is about storing information neatly so apps can find it quickly and safely.",
+    where: "It is used when apps save users, orders, messages, payments, products, or search history.",
+    examples: ["Amazon product inventory", "WhatsApp message storage", "Bank transaction history", "Library book records"],
+    tools: ["SQL", "PostgreSQL", "MySQL", "MongoDB", "Python or JavaScript"],
+    paths: "SQL helps in backend, data science, analytics, business intelligence, and cloud data roles. Python or JavaScript can connect databases to real apps.",
+    roadmap: ["Learn what tables and rows are.", "Write simple SQL queries.", "Build a small student records app.", "Ask yourself: do I enjoy organizing information clearly?"],
+    build: "Data storage and query systems",
+    mainLanguage: "SQL",
+    appExamples: "Amazon, WhatsApp, banking apps"
+  },
+  {
+    title: "Robotics",
+    icon: "RB",
+    category: "Code that moves machines",
+    what: "Robotics is about writing software that helps machines sense, decide, and move in the real world.",
+    where: "It is used in factories, delivery robots, drones, medical machines, and student robotics competitions.",
+    examples: ["Drones", "Robot vacuum cleaners", "Factory arms", "Self-driving car experiments"],
+    tools: ["Python", "C++", "Arduino", "ROS later", "Sensors and motors"],
+    paths: "Python leads to automation, AI, data, and robotics. C++ leads to robotics, embedded systems, games, and high-performance software.",
+    roadmap: ["Learn basic Python or C++.", "Try a simple Arduino or robot simulator.", "Make a robot avoid obstacles.", "Ask yourself: do I enjoy code that affects the physical world?"],
+    build: "Robots, drones, and smart machines",
+    mainLanguage: "Python or C++",
+    appExamples: "Drones, robot vacuums, warehouse robots"
+  },
+  {
+    title: "AR/VR Development",
+    icon: "XR",
+    category: "Digital worlds around you",
+    what: "AR and VR development is about building experiences you can see through headsets, phones, or glasses.",
+    where: "It is used in games, virtual classrooms, training simulations, shopping previews, and design walkthroughs.",
+    examples: ["VR games", "IKEA furniture preview", "Snapchat filters", "Virtual museum tours"],
+    tools: ["Unity", "C#", "Unreal Engine", "3D basics", "ARKit or ARCore later"],
+    paths: "C# can lead to Unity games, AR/VR apps, backend, and Windows apps. 3D skills can also lead to game art and product visualization.",
+    roadmap: ["Learn simple 3D ideas.", "Build a tiny Unity scene.", "Make an object appear in AR.", "Ask yourself: do I enjoy immersive visual experiences?"],
+    build: "AR filters and VR experiences",
+    mainLanguage: "C#",
+    appExamples: "Snapchat filters, VR games, IKEA Place"
+  },
+  {
+    title: "Technical Writing",
+    icon: "TW",
+    category: "Explaining technology clearly",
+    what: "Technical writing is about explaining software, tools, and steps so other people can understand and use them.",
+    where: "It is used in documentation, tutorials, help centers, API guides, and product manuals.",
+    examples: ["Help pages in apps", "Setup guides", "API documentation", "Beginner tutorials"],
+    tools: ["Markdown", "Git", "Basic HTML", "Screenshots", "Clear writing"],
+    paths: "Markdown and basic web skills can lead to documentation engineering, developer relations, content design, and frontend basics.",
+    roadmap: ["Learn Markdown.", "Write a simple guide for a project.", "Explain one coding concept in your own words.", "Ask yourself: do I enjoy making hard things feel easy?"],
+    build: "Docs, tutorials, and guides",
+    mainLanguage: "Markdown",
+    appExamples: "GitHub docs, Notion guides, help centers"
+  },
+  {
+    title: "Product Management",
+    icon: "PM",
+    category: "Choosing what to build",
+    what: "Product management is about understanding users, choosing useful features, and helping a team build the right thing.",
+    where: "It is used in startups, app companies, SaaS products, ecommerce, fintech, and almost every software team.",
+    examples: ["Planning a new app feature", "Improving checkout flow", "Prioritizing bug fixes", "Studying user feedback"],
+    tools: ["User research", "Roadmaps", "Analytics basics", "Figma", "No-code tools"],
+    paths: "Basic coding, data, and design knowledge can lead to product management, startup building, UX strategy, and growth roles.",
+    roadmap: ["Study apps you use daily.", "Write why a feature is useful.", "Design a tiny product plan.", "Ask yourself: do I enjoy users, decisions, and teamwork?"],
+    build: "Feature plans and product roadmaps",
+    mainLanguage: "No code first",
+    appExamples: "Notion, Swiggy, Spotify"
   }
 ];
 
 const languages = [
   {
     name: "Python",
+    icon: "Py",
     note: "Beginner-friendly and useful in many paths.",
     accent: "#2e9d63",
     paths: ["Backend", "Machine Learning", "AI", "Data Science", "Automation", "Cybersecurity"]
   },
   {
     name: "JavaScript",
+    icon: "JS",
     note: "The main language of the web.",
     accent: "#f2c94c",
     paths: ["Frontend", "Backend", "Full Stack", "Mobile apps", "Browser games", "Desktop apps"]
   },
   {
+    name: "TypeScript",
+    icon: "TS",
+    note: "JavaScript with extra safety for bigger apps.",
+    accent: "#3178c6",
+    paths: ["Frontend", "Backend", "Full Stack", "Large web apps", "AI interfaces"]
+  },
+  {
     name: "Java",
+    icon: "Ja",
     note: "Common in Android and large company systems.",
     accent: "#d63384",
     paths: ["Android", "Backend", "Enterprise apps", "Banking systems", "Large systems"]
   },
   {
+    name: "Kotlin",
+    icon: "Kt",
+    note: "A modern favorite for Android apps.",
+    accent: "#7f52ff",
+    paths: ["Android", "Backend", "Mobile apps", "Cross-platform experiments"]
+  },
+  {
     name: "Go",
+    icon: "Go",
     note: "Simple, fast, and loved for cloud tools.",
     accent: "#0071e3",
     paths: ["Backend", "Cloud", "DevOps tools", "Infrastructure", "APIs"]
   },
   {
     name: "Swift",
+    icon: "Sw",
     note: "The friendly route into Apple apps.",
     accent: "#ff8a00",
     paths: ["iOS", "iPadOS", "Apple Watch", "macOS apps"]
   },
   {
     name: "C#",
+    icon: "C#",
     note: "Great for Unity games and some backend work.",
     accent: "#7c3aed",
     paths: ["Game Dev", "Unity", "Backend", "Windows apps"]
   },
   {
     name: "C/C++",
+    icon: "C++",
     note: "Closer to hardware and performance.",
     accent: "#52525b",
     paths: ["Embedded", "Game engines", "Robotics", "Operating systems", "Performance apps"]
   },
   {
+    name: "SQL",
+    icon: "SQL",
+    note: "The language for asking databases questions.",
+    accent: "#2563eb",
+    paths: ["Backend", "Data Science", "Analytics", "Databases", "Business intelligence"]
+  },
+  {
+    name: "Rust",
+    icon: "Rs",
+    note: "Used when speed and safety both matter.",
+    accent: "#b45309",
+    paths: ["Blockchain", "Systems", "Backend", "Cloud tools", "Performance apps"]
+  },
+  {
+    name: "HTML/CSS",
+    icon: "HC",
+    note: "The starting point for beautiful web pages.",
+    accent: "#e34f26",
+    paths: ["Frontend", "UI implementation", "Landing pages", "Email templates", "Portfolio sites"]
+  },
+  {
+    name: "Dart",
+    icon: "Dt",
+    note: "Used with Flutter for smooth mobile apps.",
+    accent: "#0175c2",
+    paths: ["Android", "iOS", "Cross-platform apps", "Desktop apps"]
+  },
+  {
     name: "Solidity",
+    icon: "Sol",
     note: "Used for smart contracts in blockchain.",
     accent: "#111827",
     paths: ["Blockchain", "Smart contracts", "Crypto apps", "Web3 experiments"]
   }
 ];
+
+const domainVisuals = {
+  "Frontend Development": { label: "UI", accent: "#0071e3" },
+  "Backend Development": { label: "API", accent: "#2e9d63" },
+  "Full Stack Development": { label: "FS", accent: "#7c3aed" },
+  "Machine Learning": { label: "ML", accent: "#d97706" },
+  "AI Engineering": { label: "AI", accent: "#db2777" },
+  "Data Science": { label: "DS", accent: "#0891b2" },
+  "Android Development": { label: "And", accent: "#3ddc84" },
+  "iOS Development": { label: "iOS", accent: "#111827" },
+  DevOps: { label: "Ops", accent: "#f97316" },
+  Cybersecurity: { label: "Sec", accent: "#dc2626" },
+  "Cloud Computing": { label: "CL", accent: "#0284c7" },
+  "Game Development": { label: "Game", accent: "#9333ea" },
+  Blockchain: { label: "BC", accent: "#0f766e" },
+  "UI/UX Design": { label: "UX", accent: "#e11d48" },
+  "Embedded Systems": { label: "Chip", accent: "#475569" },
+  Automation: { label: "Auto", accent: "#16a34a" },
+  "Software Testing": { label: "QA", accent: "#ca8a04" },
+  "Database Engineering": { label: "DB", accent: "#2563eb" },
+  Robotics: { label: "Bot", accent: "#64748b" },
+  "AR/VR Development": { label: "XR", accent: "#8b5cf6" },
+  "Technical Writing": { label: "Doc", accent: "#0d9488" },
+  "Product Management": { label: "PM", accent: "#f43f5e" }
+};
 
 const domainButtons = document.querySelector("#domainButtons");
 const search = document.querySelector("#domainSearch");
@@ -320,8 +465,9 @@ function renderButtons(filter = "") {
   domainButtons.innerHTML = visibleDomains
     .map((domain) => {
       const active = domain.title === currentDomain.title ? " active" : "";
+      const visual = domainVisuals[domain.title] || { label: domain.icon, accent: "#1d1d1f" };
       return `<button class="domain-button${active}" type="button" data-domain="${domain.title}">
-        <span class="brand-mark">${domain.icon}</span>
+        <span class="tech-icon mini" style="--icon-color: ${visual.accent}">${visual.label}</span>
         <span>${domain.title}</span>
       </button>`;
     })
@@ -332,7 +478,9 @@ let currentDomain = domains[0];
 
 function selectDomain(title) {
   currentDomain = domains.find((domain) => domain.title === title) || domains[0];
-  detail.icon.textContent = currentDomain.icon;
+  const visual = domainVisuals[currentDomain.title] || { label: currentDomain.icon, accent: "#1d1d1f" };
+  detail.icon.textContent = visual.label;
+  detail.icon.style.setProperty("--icon-color", visual.accent);
   detail.category.textContent = currentDomain.category;
   detail.title.textContent = currentDomain.title;
   detail.what.textContent = currentDomain.what;
@@ -347,7 +495,10 @@ function selectDomain(title) {
 function renderLanguages() {
   document.querySelector("#languageCards").innerHTML = languages
     .map((language) => `<article class="language-card" style="--accent: ${language.accent}">
-      <p class="eyebrow">Language path</p>
+      <div class="language-topline">
+        <span class="language-icon">${language.icon}</span>
+        <p class="eyebrow">Language path</p>
+      </div>
       <h3>${language.name}</h3>
       <p>${language.note}</p>
       <div class="path-list">
