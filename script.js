@@ -425,31 +425,39 @@ const languages = [
 ];
 
 const domainVisuals = {
-  "Frontend Development": { label: "UI", accent: "#0071e3" },
-  "Backend Development": { label: "API", accent: "#2e9d63" },
-  "Full Stack Development": { label: "FS", accent: "#7c3aed" },
-  "Machine Learning": { label: "ML", accent: "#d97706" },
-  "AI Engineering": { label: "AI", accent: "#db2777" },
-  "Data Science": { label: "DS", accent: "#0891b2" },
-  "Android Development": { label: "And", accent: "#3ddc84" },
-  "iOS Development": { label: "iOS", accent: "#111827" },
-  DevOps: { label: "Ops", accent: "#f97316" },
-  Cybersecurity: { label: "Sec", accent: "#dc2626" },
-  "Cloud Computing": { label: "CL", accent: "#0284c7" },
-  "Game Development": { label: "Game", accent: "#9333ea" },
-  Blockchain: { label: "BC", accent: "#0f766e" },
-  "UI/UX Design": { label: "UX", accent: "#e11d48" },
-  "Embedded Systems": { label: "Chip", accent: "#475569" },
-  Automation: { label: "Auto", accent: "#16a34a" },
-  "Software Testing": { label: "QA", accent: "#ca8a04" },
-  "Database Engineering": { label: "DB", accent: "#2563eb" },
-  Robotics: { label: "Bot", accent: "#64748b" },
-  "AR/VR Development": { label: "XR", accent: "#8b5cf6" },
-  "Technical Writing": { label: "Doc", accent: "#0d9488" },
-  "Product Management": { label: "PM", accent: "#f43f5e" }
+  "Frontend Development": { label: "React", accent: "#61dafb", logo: "react/react-original.svg" },
+  "Backend Development": { label: "Node", accent: "#539e43", logo: "nodejs/nodejs-original.svg" },
+  "Full Stack Development": { label: "Next", accent: "#111827", logo: "nextjs/nextjs-original.svg" },
+  "Machine Learning": { label: "TF", accent: "#ff6f00", logo: "tensorflow/tensorflow-original.svg" },
+  "AI Engineering": { label: "Torch", accent: "#ee4c2c", logo: "pytorch/pytorch-original.svg" },
+  "Data Science": { label: "Pandas", accent: "#150458", logo: "pandas/pandas-original.svg" },
+  "Android Development": { label: "Android", accent: "#3ddc84", logo: "android/android-original.svg" },
+  "iOS Development": { label: "Apple", accent: "#111827", logo: "apple/apple-original.svg" },
+  DevOps: { label: "Docker", accent: "#2496ed", logo: "docker/docker-original.svg" },
+  Cybersecurity: { label: "Linux", accent: "#dc2626", logo: "linux/linux-original.svg" },
+  "Cloud Computing": { label: "AWS", accent: "#ff9900", logo: "amazonwebservices/amazonwebservices-original-wordmark.svg" },
+  "Game Development": { label: "Unity", accent: "#111827", logo: "unity/unity-original.svg" },
+  Blockchain: { label: "Sol", accent: "#0f766e", logo: "solidity/solidity-original.svg" },
+  "UI/UX Design": { label: "Figma", accent: "#f24e1e", logo: "figma/figma-original.svg" },
+  "Embedded Systems": { label: "Arduino", accent: "#00979d", logo: "arduino/arduino-original.svg" },
+  Automation: { label: "Python", accent: "#3776ab", logo: "python/python-original.svg" },
+  "Software Testing": { label: "Selenium", accent: "#43b02a", logo: "selenium/selenium-original.svg" },
+  "Database Engineering": { label: "Postgres", accent: "#336791", logo: "postgresql/postgresql-original.svg" },
+  Robotics: { label: "ROS", accent: "#22314e", logo: "ros/ros-original.svg" },
+  "AR/VR Development": { label: "Unity", accent: "#8b5cf6", logo: "unity/unity-original.svg" },
+  "Technical Writing": { label: "MD", accent: "#0d9488", logo: "markdown/markdown-original.svg" },
+  "Product Management": { label: "Jira", accent: "#0052cc", logo: "jira/jira-original.svg" }
 };
 
 const deviconBase = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/";
+
+function renderIconImage(visual) {
+  if (!visual.logo) {
+    return "";
+  }
+
+  return `<img src="${deviconBase}${visual.logo}" alt="" loading="lazy" onerror="this.remove()">`;
+}
 
 function renderLanguageLogo(language) {
   const logos = Array.isArray(language.logo) ? language.logo : [language.logo];
@@ -497,7 +505,10 @@ function renderButtons(filter = "") {
       const active = domain.title === currentDomain.title ? " active" : "";
       const visual = domainVisuals[domain.title] || { label: domain.icon, accent: "#1d1d1f" };
       return `<button class="domain-button${active}" type="button" data-domain="${domain.title}">
-        <span class="tech-icon mini" style="--icon-color: ${visual.accent}">${visual.label}</span>
+        <span class="tech-icon mini" style="--icon-color: ${visual.accent}">
+          ${renderIconImage(visual)}
+          <span class="icon-fallback">${visual.label}</span>
+        </span>
         <span>${domain.title}</span>
       </button>`;
     })
@@ -509,7 +520,7 @@ let currentDomain = domains[0];
 function selectDomain(title) {
   currentDomain = domains.find((domain) => domain.title === title) || domains[0];
   const visual = domainVisuals[currentDomain.title] || { label: currentDomain.icon, accent: "#1d1d1f" };
-  detail.icon.textContent = visual.label;
+  detail.icon.innerHTML = `${renderIconImage(visual)}<span class="icon-fallback">${visual.label}</span>`;
   detail.icon.style.setProperty("--icon-color", visual.accent);
   detail.category.textContent = currentDomain.category;
   detail.title.textContent = currentDomain.title;

@@ -83,13 +83,14 @@ a {
   width: 2.45rem;
   height: 2.45rem;
   border-radius: 0.85rem;
-  background:
-    radial-gradient(circle at 24% 24%, #ffffff 0 9%, transparent 10%),
-    linear-gradient(135deg, #0071e3, #7c3aed 48%, #2e9d63);
-  color: white;
+  background: transparent;
   box-shadow: 0 10px 26px rgba(0, 113, 227, 0.28);
-  font-size: 0.78rem;
-  font-weight: 900;
+}
+
+.app-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .brand-text {
@@ -418,11 +419,12 @@ h4 {
   height: 4.4rem;
   flex: 0 0 auto;
   border-radius: 1.35rem;
+  border: 1px solid color-mix(in srgb, var(--icon-color) 26%, var(--line));
   background:
-    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.88) 0 12%, transparent 13%),
-    linear-gradient(145deg, color-mix(in srgb, var(--icon-color) 88%, white), color-mix(in srgb, var(--icon-color) 70%, black));
-  color: white;
-  box-shadow: 0 18px 42px color-mix(in srgb, var(--icon-color) 30%, transparent);
+    radial-gradient(circle at 22% 18%, color-mix(in srgb, var(--icon-color) 14%, white), transparent 42%),
+    white;
+  color: var(--ink);
+  box-shadow: 0 18px 42px color-mix(in srgb, var(--icon-color) 18%, transparent);
   font-size: 0.96rem;
   font-weight: 900;
   letter-spacing: 0;
@@ -435,16 +437,50 @@ h4 {
   inset: auto -12% -22% 28%;
   height: 48%;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.22);
+  background: color-mix(in srgb, var(--icon-color) 10%, transparent);
   transform: rotate(-16deg);
+}
+
+.tech-icon img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 2.7rem;
+  height: 2.7rem;
+  object-fit: contain;
+}
+
+.icon-fallback {
+  position: relative;
+  z-index: 1;
+  display: none;
+  max-width: 90%;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 0.72rem;
+  line-height: 1;
+  text-overflow: ellipsis;
+}
+
+.tech-icon:not(:has(img)) .icon-fallback {
+  display: inline;
 }
 
 .tech-icon.mini {
   width: 2.15rem;
   height: 2.15rem;
   border-radius: 0.8rem;
-  font-size: 0.62rem;
+  font-size: 0.52rem;
   box-shadow: 0 8px 18px color-mix(in srgb, var(--icon-color) 22%, transparent);
+}
+
+.tech-icon.mini img {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.tech-icon.mini .icon-fallback {
+  font-size: 0.48rem;
 }
 
 .domain-button:hover,
