@@ -852,37 +852,24 @@ tr:last-child td {
 }
 
 .heart-icon {
-  width: 2.35rem;
-  height: 2.1rem;
-  overflow: visible;
-  filter:
-    drop-shadow(0 0 4px rgba(255, 64, 168, 0.95))
-    drop-shadow(0 0 14px rgba(255, 0, 120, 0.72))
-    drop-shadow(0 0 28px rgba(124, 58, 237, 0.5));
-  animation: heartPulse 2.2s ease-in-out infinite;
-}
-
-.heart-icon path {
-  fill: rgba(255, 59, 127, 0.08);
-  stroke: #ff4fb3;
-  stroke-width: 5.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  filter: url("#neonHeartGlow");
-}
-
-.heart-icon path::selection {
-  background: transparent;
+  display: inline-block;
+  color: #ff3b8d;
+  font-size: 1rem;
+  line-height: 1;
+  text-shadow:
+    0 0 4px rgba(255, 59, 141, 0.7),
+    0 0 10px rgba(255, 59, 141, 0.35);
+  animation: heartPulse 2.4s ease-in-out infinite;
 }
 
 @keyframes heartPulse {
   0%,
   100% {
     transform: scale(1);
-    opacity: 0.92;
+    opacity: 0.9;
   }
   50% {
-    transform: scale(1.08);
+    transform: scale(1.07);
     opacity: 1;
   }
 }
