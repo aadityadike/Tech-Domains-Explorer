@@ -551,12 +551,23 @@ function renderLanguages() {
 
 function renderComparison() {
   document.querySelector("#comparisonRows").innerHTML = domains
-    .map((domain) => `<tr>
-      <td><strong>${domain.title}</strong></td>
+    .map((domain) => {
+      const visual = domainVisuals[domain.title] || { label: domain.icon, accent: "#1d1d1f" };
+      return `<tr>
+      <td>
+        <span class="compare-domain">
+          <span class="tech-icon table-icon" style="--icon-color: ${visual.accent}">
+            ${renderIconImage(visual)}
+            <span class="icon-fallback">${visual.label}</span>
+          </span>
+          <strong>${domain.title}</strong>
+        </span>
+      </td>
       <td>${domain.build}</td>
       <td>${domain.mainLanguage}</td>
       <td>${domain.appExamples}</td>
-    </tr>`)
+    </tr>`;
+    })
     .join("");
 }
 

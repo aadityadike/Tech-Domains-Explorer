@@ -193,20 +193,36 @@
 
       <section id="advice" class="advice section reveal">
         <div class="advice-card">
-          <p class="eyebrow">Mentor advice</p>
-          <h2>Do not chase the perfect field. Chase curiosity.</h2>
+          <div class="advice-hero">
+            <div>
+              <p class="eyebrow">Mentor advice</p>
+              <h2>Do not chase the perfect field. Chase curiosity.</h2>
+            </div>
+            <div class="mentor-orb" aria-hidden="true">
+              <span>?</span>
+            </div>
+          </div>
           <div class="advice-grid">
-            <p>
-              Pick a domain by trying small projects, not by guessing. If you
-              enjoy making screens, try frontend. If you enjoy logic and data,
-              try backend or data science. If you enjoy puzzles, try security.
-            </p>
-            <p>
-              Explore before deciding because most beginners only know a tiny
-              part of tech at first. It is okay to switch later. Your early
-              goal is to learn fundamentals: variables, loops, functions,
-              problem solving, and how to break big problems into small steps.
-            </p>
+            <article class="advice-note">
+              <span>1</span>
+              <h4>Try before you decide</h4>
+              <p>Pick a tiny project from a domain and see how it feels. Interest becomes clearer when you build.</p>
+            </article>
+            <article class="advice-note">
+              <span>2</span>
+              <h4>Notice what feels fun</h4>
+              <p>Screens may point to frontend. Logic may point to backend. Patterns may point to data or AI.</p>
+            </article>
+            <article class="advice-note">
+              <span>3</span>
+              <h4>Switching is normal</h4>
+              <p>You are not locking your future today. Exploring different paths makes you a stronger learner.</p>
+            </article>
+            <article class="advice-note">
+              <span>4</span>
+              <h4>Fundamentals matter most</h4>
+              <p>Variables, loops, functions, debugging, and problem solving help in every software field.</p>
+            </article>
           </div>
           <div class="starter-choice" aria-label="Beginner starting choices">
             <button class="choice active" data-choice="python">I like logic and AI</button>
@@ -222,7 +238,7 @@
 
     <footer class="footer">
       <p>Built for beginners. Explore lightly, build tiny things, and follow what feels interesting.</p>
-      <p class="watermark">Made by Aaditya Dike</p>
+      <p class="watermark">Made by Aaditya <span class="heart-icon" aria-hidden="true"></span></p>
     </footer>
 
     <script src="script.js"></script>
