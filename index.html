@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tech Domains Explorer</title>
+    <meta
+      name="description"
+      content="A beginner-friendly interactive guide to software engineering domains, languages, examples, and starter roadmaps."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Tech Domains Explorer home">
+        <span class="brand-mark">CS</span>
+        <span>Domain Explorer</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#explore">Explore</a>
+        <a href="#languages">Languages</a>
+        <a href="#compare">Compare</a>
+        <a href="#advice">Advice</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">For complete beginners</p>
+          <h1>Find the tech path that feels exciting to you.</h1>
+          <p>
+            Programming is not just one road. It is a city full of different
+            places to explore: apps, games, AI, data, security, design, cloud,
+            and more.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#explore">Start exploring</a>
+            <a class="button secondary" href="#languages">See language paths</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal" aria-label="Animated map of technology domains">
+          <div class="orbit">
+            <span class="bubble bubble-one">Web</span>
+            <span class="bubble bubble-two">AI</span>
+            <span class="bubble bubble-three">Apps</span>
+            <span class="bubble bubble-four">Cloud</span>
+            <span class="bubble bubble-five">Games</span>
+            <div class="glow-card">
+              <span class="tiny-label">You are here</span>
+              <strong>Learn one thing.<br>Open many doors.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-strip section reveal" aria-label="Learning mindset">
+        <div>
+          <span class="step-number">1</span>
+          <p>Explore domains like trying different school clubs.</p>
+        </div>
+        <div>
+          <span class="step-number">2</span>
+          <p>Build tiny projects to notice what you enjoy.</p>
+        </div>
+        <div>
+          <span class="step-number">3</span>
+          <p>Choose slowly. Switching later is completely normal.</p>
+        </div>
+      </section>
+
+      <section id="explore" class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Interactive guide</p>
+          <h2>Click a domain to understand it simply.</h2>
+          <p>
+            Each card explains what people build, where you see it in daily
+            life, which languages help, and a tiny beginner roadmap.
+          </p>
+        </div>
+
+        <div class="domain-layout">
+          <aside class="domain-picker reveal" aria-label="Technology domains">
+            <label class="search-label" for="domainSearch">Find a domain</label>
+            <input id="domainSearch" class="search" type="search" placeholder="Try AI, games, apps...">
+            <div id="domainButtons" class="domain-buttons"></div>
+          </aside>
+
+          <article class="domain-detail reveal" aria-live="polite">
+            <div class="domain-topline">
+              <span id="domainIcon" class="domain-icon" aria-hidden="true"></span>
+              <div>
+                <p id="domainCategory" class="eyebrow"></p>
+                <h3 id="domainTitle"></h3>
+              </div>
+            </div>
+            <div class="detail-grid">
+              <section>
+                <h4>1. What is this domain?</h4>
+                <p id="domainWhat"></p>
+              </section>
+              <section>
+                <h4>2. Where is it used?</h4>
+                <p id="domainWhere"></p>
+              </section>
+              <section>
+                <h4>3. Real-life examples</h4>
+                <ul id="domainExamples"></ul>
+              </section>
+              <section>
+                <h4>4. Languages and tools</h4>
+                <ul id="domainTools"></ul>
+              </section>
+              <section class="wide">
+                <h4>5. What else can these languages build?</h4>
+                <p id="domainLanguagePaths"></p>
+              </section>
+              <section class="wide">
+                <h4>6. Beginner roadmap</h4>
+                <ol id="domainRoadmap"></ol>
+              </section>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="languages" class="language-zone section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">One language, many doors</p>
+          <h2>Learning a language is like getting a travel pass.</h2>
+          <p>
+            You do not need to know your final career today. Start with one
+            beginner-friendly language and notice which direction pulls you in.
+          </p>
+        </div>
+        <div id="languageCards" class="language-cards reveal"></div>
+      </section>
+
+      <section class="journey section reveal" aria-label="Simple domain map">
+        <div>
+          <p class="eyebrow">Simple map</p>
+          <h2>How the tech world fits together</h2>
+        </div>
+        <div class="journey-map">
+          <div class="map-node">User sees<br><strong>Frontend + UI/UX</strong></div>
+          <div class="map-line"></div>
+          <div class="map-node">App thinks<br><strong>Backend + AI</strong></div>
+          <div class="map-line"></div>
+          <div class="map-node">Data teaches<br><strong>Data + ML</strong></div>
+          <div class="map-line"></div>
+          <div class="map-node">Systems run<br><strong>Cloud + DevOps</strong></div>
+          <div class="map-line"></div>
+          <div class="map-node">Everything stays safe<br><strong>Cybersecurity</strong></div>
+        </div>
+      </section>
+
+      <section id="compare" class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Quick comparison</p>
+          <h2>Compare domains at a glance.</h2>
+        </div>
+        <div class="table-wrap reveal">
+          <table>
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th>What You Build</th>
+                <th>Main Language</th>
+                <th>Real App Examples</th>
+              </tr>
+            </thead>
+            <tbody id="comparisonRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="advice" class="advice section reveal">
+        <div class="advice-card">
+          <p class="eyebrow">Mentor advice</p>
+          <h2>Do not chase the perfect field. Chase curiosity.</h2>
+          <div class="advice-grid">
+            <p>
+              Pick a domain by trying small projects, not by guessing. If you
+              enjoy making screens, try frontend. If you enjoy logic and data,
+              try backend or data science. If you enjoy puzzles, try security.
+            </p>
+            <p>
+              Explore before deciding because most beginners only know a tiny
+              part of tech at first. It is okay to switch later. Your early
+              goal is to learn fundamentals: variables, loops, functions,
+              problem solving, and how to break big problems into small steps.
+            </p>
+          </div>
+          <div class="starter-choice" aria-label="Beginner starting choices">
+            <button class="choice active" data-choice="python">I like logic and AI</button>
+            <button class="choice" data-choice="javascript">I like websites and apps</button>
+            <button class="choice" data-choice="design">I like visuals and people</button>
+          </div>
+          <p id="choiceResult" class="choice-result">
+            Start with Python, build tiny tools, then try data, backend, AI, or automation.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built for beginners. Explore lightly, build tiny things, and follow what feels interesting.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
