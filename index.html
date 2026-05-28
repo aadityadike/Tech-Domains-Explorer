@@ -238,7 +238,25 @@
 
     <footer class="footer">
       <p>Built for beginners. Explore lightly, build tiny things, and follow what feels interesting.</p>
-      <p class="watermark">Made by Aaditya <span class="heart-icon" aria-hidden="true"></span></p>
+      <p class="watermark">
+        Made by Aaditya
+        <svg class="heart-icon" viewBox="0 0 64 58" aria-hidden="true">
+          <defs>
+            <filter id="neonHeartGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="3.5" result="blur"></feGaussianBlur>
+              <feMerge>
+                <feMergeNode in="blur"></feMergeNode>
+                <feMergeNode in="blur"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+              </feMerge>
+            </filter>
+          </defs>
+          <path
+            d="M32 52C19 40 8 31 8 19C8 11 14 6 21 6C26 6 30 9 32 13C34 9 38 6 43 6C50 6 56 11 56 19C56 31 45 40 32 52Z"
+            pathLength="100"
+          ></path>
+        </svg>
+      </p>
     </footer>
 
     <script src="script.js"></script>
