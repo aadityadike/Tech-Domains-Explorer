@@ -517,7 +517,24 @@ function renderButtons(filter = "") {
 
 let currentDomain = domains[0];
 
-function selectDomain(title) {
+function scrollDetailOnMobile() {
+  if (!window.matchMedia("(max-width: 980px)").matches) {
+    return;
+  }
+
+  window.setTimeout(() => {
+    const headerOffset = document.querySelector(".site-header")?.offsetHeight || 0;
+    const target = document.querySelector(".domain-detail");
+    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset - 12;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth"
+    });
+  }, 80);
+}
+
+function selectDomain(title, shouldScroll = false) {
   currentDomain = domains.find((domain) => domain.title === title) || domains[0];
   const visual = domainVisuals[currentDomain.title] || { label: currentDomain.icon, accent: "#1d1d1f" };
   detail.icon.innerHTML = `${renderIconImage(visual)}<span class="icon-fallback">${visual.label}</span>`;
@@ -531,6 +548,10 @@ function selectDomain(title) {
   detail.paths.textContent = currentDomain.paths;
   detail.roadmap.innerHTML = makeList(currentDomain.roadmap, true);
   renderButtons(search.value);
+
+  if (shouldScroll) {
+    scrollDetailOnMobile();
+  }
 }
 
 function renderLanguages() {
@@ -574,7 +595,7 @@ function renderComparison() {
 domainButtons.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-domain]");
   if (!button) return;
-  selectDomain(button.dataset.domain);
+  selectDomain(button.dataset.domain, true);
 });
 
 search.addEventListener("input", () => renderButtons(search.value));
